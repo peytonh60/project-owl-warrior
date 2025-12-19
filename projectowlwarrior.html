@@ -37,7 +37,7 @@
         <img id="pow6" src="svg/pow6.svg" alt="Ways to Help" />
 
       <section class="quiz" id="quiz" aria-labelledby="quiz-title">
-        <h2 id="quiz-title">Take the challenge to become an Owl Warrior!</h2>
+        <h2 id="quiz-title">Take the Challenge</h2>
 
         <div class="content">
         <div class="question" data-index="0" id="q0">
@@ -90,33 +90,30 @@
             <li><button data-choice="4">E) All of the above</button></li>
           </ul>
         </div>
-
         <div class="controls">
           <div class="nav-arrows">
             <button id="q-prev" aria-label="Previous question">◀ Prev</button>
             <button id="q-next" aria-label="Next question">Next ➜</button>
           </div>
-
-          <div>
-            <button id="quiz-restart">Restart</button>
-          </div>
         </div>
-
+          
       </div>
-
+   
         <div class="congrats" id="quiz-congrats" role="region" aria-live="polite" hidden>
-          <img src="pow-logo1.gif" alt="Owl Badge GIF" class="congrats-img" />
           <div class="congrats-text"><strong>Congratulations Owl Warrior!</strong></div>
           <div class="congrats-actions">
-            <a id="download-badge" class="btn" href="pow-logo1.gif" download>Download Badge GIF</a>
-            <button id="copy-badge-url" class="btn">Copy Badge URL</button>
-            <a id="share-twitter" class="btn" target="_blank" rel="noopener">Share on Twitter</a>
+            <img height="500"src="pow-logo1.gif" alt="Owl Badge GIF" class="congrats-img" />
+            <div></div><button id="copy-badge-url" class="btn">Copy Badge URL</button>
+            <a id="share-instagram" size="70" class="btn" target="_blank" rel="noopener">Share on Instagram</a>
             <a id="share-facebook" class="btn" target="_blank" rel="noopener">Share on Facebook</a>
           </div>
         </div>
-
         <div class="score" id="quiz-score" aria-live="polite"></div>
         <div class="badge" id="quiz-badge" tabindex="0" role="status" aria-live="polite">🦉 Owl Badge — Perfect score!</div>
+
+        <div class="persistent-controls">
+          <button id="quiz-restart">Restart</button>
+        </div>
       </section>
     </main>
     <script src="sidebar.js" defer></script>
