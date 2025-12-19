@@ -1,0 +1,114 @@
+/* quiz.js — quiz logic (persistence, navigation, scoring, badge) */
+(function(){
+  const storageKey = 'owlQuiz_v1';
+  const quizData = [
+    { q: "Where do screech owls commonly live?", choices:["Deserts","Forests and woodlands","Open ocean"], answer:1 },
+    { q: "What do screech owls primarily eat?", choices:["Fish","Small mammals & insects","Large mammals"], answer:1 },
+    { q: "When are screech owls mostly active?", choices:["Daytime","Nighttime (nocturnal)","Only at dusk"], answer:1 },
+    { q: "What helps owls fly silently?", choices:["Heavy bones","Soft fringed wing feathers","Bright coloration"], answer:1 },
+    { q: "What is a good way to help owls?", choices:["Cut all trees","Protect habitat & provide nesting boxes","Feed them bread"], answer:1 }
+  ];
+
+  const quizEl = document.getElementById('quiz');
+  const questionEls = Array.from(quizEl.querySelectorAll('.question'));
+  const prevBtn = document.getElementById('q-prev');
+  const nextBtn = document.getElementById('q-next');
+  const scoreEl = document.getElementById('quiz-score');
+  const badgeEl = document.getElementById('quiz-badge');
+  const restartBtn = document.getElementById('quiz-restart');
+  let current = 0;
+  const selected = new Array(quizData.length).fill(null);
+  const correct = new Array(quizData.length).fill(false);
+
+  function save() {
+    try { localStorage.setItem(storageKey, JSON.stringify({ selected, current })); } catch(e) {}
+  }
+  function load() {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (!raw) return;
+      const obj = JSON.parse(raw);
+      if (Array.isArray(obj.selected)) {
+        obj.selected.forEach((val, idx) => {
+          if (val === null || val === undefined) return;
+          if (typeof val === 'number') {
+            selected[idx] = val;
+            const qEl = questionEls[idx];
+            qEl.querySelectorAll('.options button').forEach((b, bi) => {
+              if (bi === quizData[idx].answer) b.classList.add('correct');
+              if (bi === val && bi !== quizData[idx].answer) b.classList.add('incorrect');
+            });
+            correct[idx] = (val === quizData[idx].answer);
+          }
+        });
+      }
+      if (typeof obj.current === 'number' && obj.current >=0 && obj.current < quizData.length) current = obj.current;
+    } catch(e) {
+      // ignore
+    }
+  }
+
+  function updateResultsIfPerfect(){
+    const total = correct.reduce((s,c)=> s + (c?1:0), 0);
+    scoreEl.textContent = `You got ${total} out of ${quizData.length}.`;
+    if (total === quizData.length) {
+      badgeEl.classList.add('show');
+      quizEl.classList.add('completed');
+      // Let the pop animation run then focus and bring the quiz into view
+      setTimeout(()=>{
+        try { badgeEl.focus({preventScroll:true}); } catch(e){ badgeEl.focus(); }
+        try { quizEl.scrollIntoView({behavior:'smooth', block:'center'}); } catch(e){}
+      }, 260);
+    } else {
+      badgeEl.classList.remove('show');
+      quizEl.classList.remove('completed');
+    }
+  }
+
+  function showQuestion(index){
+    questionEls.forEach((el,i)=> el.classList.toggle('active', i===index));
+    prevBtn.disabled = index===0;
+    nextBtn.textContent = index===quizData.length-1 ? 'Show Results' : 'Next ➜';
+    current = index; save();
+  }
+
+  // Hook up option buttons for immediate feedback and persistence
+  questionEls.forEach((qEl, idx)=>{
+    qEl.querySelectorAll('.options button').forEach((btn, i)=>{
+      btn.addEventListener('click', ()=>{
+        selected[idx] = i;
+        const isRight = i === quizData[idx].answer;
+        correct[idx] = isRight;
+        qEl.querySelectorAll('.options button').forEach((b, bi)=>{
+          b.classList.toggle('correct', bi === quizData[idx].answer);
+          b.classList.toggle('incorrect', bi !== quizData[idx].answer && bi === i);
+        });
+        save();
+        updateResultsIfPerfect();
+      });
+    });
+  });
+
+  prevBtn.addEventListener('click', ()=>{ if (current>0){ current--; showQuestion(current); } });
+  nextBtn.addEventListener('click', ()=>{
+    if (current < quizData.length-1){ current++; showQuestion(current); }
+    else { // Show results
+      updateResultsIfPerfect();
+    }
+  });
+
+  restartBtn.addEventListener('click', ()=>{
+    for (let i=0;i<selected.length;i++) selected[i]=null;
+    for (let i=0;i<correct.length;i++) correct[i]=false;
+    questionEls.forEach(qEl => qEl.querySelectorAll('.options button').forEach(b => b.classList.remove('correct','incorrect')));
+    badgeEl.classList.remove('show');
+    scoreEl.textContent = '';
+    quizEl.classList.remove('completed');
+    current = 0; localStorage.removeItem(storageKey); save(); showQuestion(0);
+  });
+
+  // Initialize
+  load();
+  updateResultsIfPerfect();
+  showQuestion(current);
+}());
