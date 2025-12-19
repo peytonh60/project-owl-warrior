@@ -50,20 +50,40 @@
   function updateResultsIfPerfect(){
     const total = correct.reduce((s,c)=> s + (c?1:0), 0);
     scoreEl.textContent = `You got ${total} out of ${quizData.length}.`;
-    if (total === quizData.length) {
-      badgeEl.classList.add('show');
-      quizEl.classList.add('completed');
-      // Let the pop animation run then focus and bring the quiz into view
-      setTimeout(()=>{
-        try { badgeEl.focus({preventScroll:true}); } catch(e){ badgeEl.focus(); }
-        try { quizEl.scrollIntoView({behavior:'smooth', block:'center'}); } catch(e){}
-      }, 260);
-    } else {
-      badgeEl.classList.remove('show');
-      quizEl.classList.remove('completed');
-    }
-  }
+          const congratsEl = document.getElementById('quiz-congrats');
+          const downloadBtn = document.getElementById('download-badge');
+          const copyBtn = document.getElementById('copy-badge-url');
+          const twBtn = document.getElementById('share-twitter');
+          const fbBtn = document.getElementById('share-facebook');
+          const badgeUrl = new URL('pow-logo1.gif', location.href).href;
+          const pageUrl = location.href;
 
+          if (total === quizData.length) {
+            badgeEl.classList.add('show');
+            quizEl.classList.add('completed');
+
+            // show congrats panel
+            if (congratsEl) {
+              congratsEl.hidden = false;
+              // set download link
+              if (downloadBtn) downloadBtn.href = badgeUrl;
+              // set share links
+              const text = `I scored 5/5 on the Owl Quiz! 🦉 Congratulations Owl Warrior!`;
+              if (twBtn) twBtn.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(pageUrl)}`;
+              if (fbBtn) fbBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+              // copy handler
+              if (copyBtn) copyBtn.onclick = async ()=>{ try { await navigator.clipboard.writeText(badgeUrl); copyBtn.textContent='Copied!'; setTimeout(()=>copyBtn.textContent='Copy Badge URL',1200); } catch(e){ alert('Copy failed; badge URL: '+badgeUrl); } };
+            }
+
+            // Let the pop animation run then focus and bring the quiz into view
+            setTimeout(()=>{
+              try { badgeEl.focus({preventScroll:true}); } catch(e){ badgeEl.focus(); }
+              try { quizEl.scrollIntoView({behavior:'smooth', block:'center'}); } catch(e){}
+            }, 260);
+          } else {
+            badgeEl.classList.remove('show');
+            quizEl.classList.remove('completed');
+            if (congratsEl) congratsEl.hidden = true;
   function showQuestion(index){
     questionEls.forEach((el,i)=> el.classList.toggle('active', i===index));
     prevBtn.disabled = index===0;
