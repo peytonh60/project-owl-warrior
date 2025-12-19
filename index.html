@@ -1,57 +1,96 @@
 
 
 <html>
-    <head> 
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <style>
+        :root { --sidebar-width: 260px; --bg: #fff; --accent: #2b6cb0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: system-ui, -apple-system, sans-serif; margin:0; }
+        header { position:fixed; top:0; left:0; right:0; height:56px; display:flex; align-items:center; gap:12px; padding:0 12px; background:#fff; border-bottom:1px solid #eee; z-index:30; }
+        .brand { font-weight:600; }
+        .menu-btn { background:none; border:0; font-size:20px; padding:8px; cursor:pointer; }
+
+        /* Sidebar */
+        .sidebar { position:fixed; top:0; left:0; height:100%; width:var(--sidebar-width); background:var(--bg); box-shadow: 2px 0 8px rgba(0,0,0,.12); transform:translateX(-110%); transition: transform .25s ease; z-index:40; padding:72px 16px 16px; }
+        .sidebar.open { transform:translateX(0); }
+        .sidebar nav a { display:block; padding:10px 8px; color:#111; text-decoration:none; border-radius:4px; }
+        .sidebar nav a:focus, .sidebar nav a:hover { background:#f0f8ff; outline:none; }
+        .close-btn { position:absolute; top:8px; right:8px; background:none; border:0; font-size:20px; padding:8px; cursor:pointer; }
+
+        /* backdrop */
+        .backdrop { position:fixed; inset:0; background:rgba(0,0,0,.3); opacity:0; pointer-events:none; transition:opacity .2s; z-index:35; }
+        .backdrop.show { opacity:1; pointer-events:auto; }
+
+        /* main */
+        main { padding:80px 16px 24px; max-width:900px; margin:0 auto; }
+        img { max-width:100%; display:block; margin:24px 0; }
+        img { scroll-margin-top:72px; }
+      </style>
     </head>
-    <nav>
-         <a href="#pow1">Home</a>
-         <a href="#pow2">Project</a>
-         <a href="#pow3">About</a>
-         <a href="#pow5">Habitat</a>
-         <a href="#pow6">Help</a>
-    </nav> 
+
   <body>
-        <h1>Project Owl Warrior</h1>
-        <img id="pow1" src="svg/pow1.svg" alt="Home" />
-            <nav>
-                <a href="#pow1">Home</a>
-                <a href="#pow2">Project</a>
-                <a href="#pow3">About</a>
-                <a href="#pow5">Habitat</a>
-                <a href="#pow6">Help</a>
-            </nav> 
+    <header>
+      <button class="menu-btn" id="menuBtn" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation">☰</button>
+      <div class="brand">Project Owl Warrior</div>
+    </header>
+
+    <aside id="sidebar" class="sidebar" aria-hidden="true">
+      <button class="close-btn" id="closeBtn" aria-label="Close navigation">✕</button>
+      <nav aria-label="Main navigation">
+        <a href="#pow1">Home</a>
+        <a href="#pow2">Project</a>
+        <a href="#pow3">About</a>
+        <a href="#pow4">Facts</a>
+        <a href="#pow5">Habitat</a>
+        <a href="#pow6">Ways to Help</a>
+      </nav>
+    </aside>
+
+    <div class="backdrop" id="backdrop" tabindex="-1"></div>
+
+    <main>
+      <h1>Project Owl Warrior</h1>
+      <img id="pow1" src="svg/pow1.svg" alt="Home" />
         <img id="pow2" src="svg/pow2.svg" alt="Project Owl Warrior" />
-            <nav>
-                <a href="#pow1">Home</a>
-                <a href="#pow2">Project</a>
-                <a href="#pow3">About</a>
-                <a href="#pow5">Habitat</a>
-                <a href="#pow6">Help</a>
-            </nav> 
         <img id="pow3" src="svg/pow3.svg" alt="About Screech Owls" />
         <img id="pow4" src="svg/pow4.svg" alt="Owl Facts" />
-            <nav>
-                <a href="#pow1">Home</a>
-                <a href="#pow2">Project</a>
-                <a href="#pow3">About</a>
-                <a href="#pow5">Habitat</a>
-                <a href="#pow6">Help</a>
-            </nav> 
         <img id="pow5" src="svg/pow5.svg" alt="Habitat Loss" />
-             <nav>
-                <a href="#pow1">Home</a>
-                <a href="#pow2">Project</a>
-                <a href="#pow3">About</a>
-                <a href="#pow5">Habitat</a>
-                <a href="#pow6">Help</a>
-            </nav> 
         <img id="pow6" src="svg/pow6.svg" alt="Ways to Help" />
-             <nav>
-                <a href="#pow1">Home</a>
-                <a href="#pow2">Project</a>
-                <a href="#pow3">About</a>
-                <a href="#pow5">Habitat</a>
-                <a href="#pow6">Help</a>
-            </nav> 
+    </main>
+    <script>
+      (function(){
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const closeBtn = document.getElementById('closeBtn');
+        const backdrop = document.getElementById('backdrop');
+        const firstLink = sidebar.querySelector('nav a');
+
+        function open() {
+          sidebar.classList.add('open');
+          backdrop.classList.add('show');
+          menuBtn.setAttribute('aria-expanded','true');
+          sidebar.setAttribute('aria-hidden','false');
+          firstLink && firstLink.focus();
+        }
+        function close() {
+          sidebar.classList.remove('open');
+          backdrop.classList.remove('show');
+          menuBtn.setAttribute('aria-expanded','false');
+          sidebar.setAttribute('aria-hidden','true');
+          menuBtn.focus();
+        }
+        menuBtn.addEventListener('click', () => {
+          const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+          expanded ? close() : open();
+        });
+        closeBtn.addEventListener('click', close);
+        backdrop.addEventListener('click', close);
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape') close();
+        });
+      }());
+    </script>
     </body>
 </html>
