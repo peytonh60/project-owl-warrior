@@ -2,13 +2,12 @@
 (function(){
   const storageKey = 'owlQuiz_v1';
   const quizData = [
-    { q: "Where do screech owls commonly live?", choices:["Deserts","Forests and woodlands","Open ocean"], answer:1 },
-    { q: "What do screech owls primarily eat?", choices:["Fish","Small mammals & insects","Large mammals"], answer:1 },
-    { q: "When are screech owls mostly active?", choices:["Daytime","Nighttime (nocturnal)","Only at dusk"], answer:1 },
-    { q: "What helps owls fly silently?", choices:["Heavy bones","Soft fringed wing feathers","Bright coloration"], answer:1 },
-    { q: "What is a good way to help owls?", choices:["Cut all trees","Protect habitat & provide nesting boxes","Feed them bread"], answer:1 }
+    { q: "Where do screech owls commonly live?", choices:["Deserts","Forests and woodlands","Open ocean","Rocky mountains"], answer:1 },
+    { q: "What do screech owls primarily eat?", choices:["Fish","Small mammals & insects","Berries","Seeds"], answer:1 },
+    { q: "When are screech owls mostly active?", choices:["Midday (12-3 PM)","Nighttime (12-2 AM)","Early morning (7-9 AM)","Early evening (6-7 PM)"], answer:1 },
+    { q: "Which best describes how screech owls call?", choices:["A low coo","A high trill","A loud bark","A soft click"], answer:1 },
+    { q: "How can you help owls?", choices:["Advocate for habitat protections","Protect habitat & provide nesting boxes","Plant native plants","Avoid using pesticides","All of the above"], answer:4 }
   ];
-
   const quizEl = document.getElementById('quiz');
   const questionEls = Array.from(quizEl.querySelectorAll('.question'));
   const prevBtn = document.getElementById('q-prev');
