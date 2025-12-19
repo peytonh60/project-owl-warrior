@@ -84,6 +84,9 @@
             badgeEl.classList.remove('show');
             quizEl.classList.remove('completed');
             if (congratsEl) congratsEl.hidden = true;
+          }
+        }
+
   function showQuestion(index){
     questionEls.forEach((el,i)=> el.classList.toggle('active', i===index));
     prevBtn.disabled = index===0;
