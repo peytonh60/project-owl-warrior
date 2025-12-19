@@ -1,11 +1,10 @@
 /* styles.css — extracted from projectowlwarrior.html */
-:root { --sidebar-width: 260px; --bg: #fff; --accent: #2b6cb0; }
+:root { --sidebar-width: 260px; --bg: #7bc49d; --accent: #2b6cb0; }
 html { scroll-behavior: smooth; }
 body { font-family: system-ui, -apple-system, sans-serif; margin:0; }
-header { position:fixed; top:0; left:0; right:0; height:56px; display:flex; align-items:center; gap:12px; padding:0 12px; background:#fff; border-bottom:1px solid #eee; z-index:30; }
+header { position:fixed; top:0; left:0; right:0; height:70px; display:flex; align-items:center; gap:12px; padding:0 12px; background:#6fc1b8; border-bottom:1px solid #eee; z-index:30; }
 .brand { font-weight:600; }
 .menu-btn { background:none; border:0; font-size:20px; padding:8px; cursor:pointer; }
-
 /* Sidebar */
 .sidebar { position:fixed; top:0; left:0; height:100%; width:var(--sidebar-width); background:var(--bg); box-shadow: 2px 0 8px rgba(0,0,0,.12); transform:translateX(-110%); transition: transform .25s ease; z-index:40; padding:72px 16px 16px; }
 .sidebar.open { transform:translateX(0); }
