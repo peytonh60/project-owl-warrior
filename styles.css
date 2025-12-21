@@ -39,18 +39,36 @@ img { scroll-margin-top:72px; }
 
 /* Content fade for completion animation */
 .quiz .content { transition: opacity .28s ease, transform .28s ease; }
-.quiz.completed .content { opacity:0; transform:translateY(-8px); pointer-events:none; }
+/* When quiz is completed we remove the content from the flow so the congrats panel sits directly under the badge */
+.quiz.completed .content { display:none; }
 
 /* Badge as floating overlay + pop animation */
 .badge { position:fixed; right:20px; bottom:20px; display:none; transform-origin:center; box-shadow:0 6px 20px rgba(0,0,0,.12); border-radius:10px; padding:12px 16px; background:#fff7ed; border:1px solid #ffd580; }
 .badge.show { display:block; animation: pop .45s cubic-bezier(.2,.9,.3,1) both; }
 
 /* Congrats panel */
-.congrats { display:flex; align-items:center; gap:12px; padding:12px; border-radius:8px; background:linear-gradient(180deg,#fff 0%, #f9fafb 100%); border:1px solid #eee; box-shadow: 0 6px 18px rgba(0,0,0,.06); margin-top:12px; justify-content:center; }
+.congrats { display:flex; align-items:center; gap:12px; padding:12px; border-radius:8px; background:linear-gradient(180deg,#fff 0%, #f9fafb 100%); border:1px solid #eee; box-shadow: 0 6px 18px rgba(0,0,0,.06); margin-top:4px; justify-content:center; }
 .congrats-img { width:220px; height:auto; border-radius:6px; box-shadow: 0 6px 20px rgba(0,0,0,.1); }
 .congrats-text { font-size:1.2rem; text-align:center; }
+.badge-top {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:8px 0 4px;
+  padding:10px 0 6px;
+  background:#fff; /* white box */
+  border-radius:8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  line-height:0; /* remove descender gap */
+}
+.badge-top-img {
+  width:auto; /* adjust as needed */
+  height:auto;
+  display:block;
+  margin:0;
+}
 .congrats-actions { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:6px; }
-.btn { background:#2b6cb0; color:#fff; size:70; padding:8px 10px; border-radius:6px; text-decoration:none; cursor:pointer; font-size:0.95rem; }
+.btn { background:#2b6cb0; color:#fff; padding:0 12px; border-radius:6px; text-decoration:none; cursor:pointer; font-size:0.95rem; display:inline-flex; align-items:center; justify-content:center; min-width:160px; height:44px; }
 .btn:focus { outline:2px solid #cfe8ff; }
 .btn[download] { background:#f59e0b; }
 .congrats[hidden] { display:none; }
