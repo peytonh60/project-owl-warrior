@@ -53,7 +53,7 @@
           const congratsEl = document.getElementById('quiz-congrats');
           const downloadBtn = document.getElementById('download-badge');
           const copyBtn = document.getElementById('copy-badge-url');
-          const twBtn = document.getElementById('share-twitter');
+          const igBtn = document.getElementById('share-instagram');
           const fbBtn = document.getElementById('share-facebook');
           const badgeUrl = new URL('pow-logo1.gif', location.href).href;
           const pageUrl = location.href;
@@ -69,7 +69,8 @@
               if (downloadBtn) downloadBtn.href = badgeUrl;
               // set share links
               const text = `I scored 5/5 on the Owl Quiz! 🦉 Congratulations Owl Warrior!`;
-              if (twBtn) twBtn.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(pageUrl)}`;
+              // Instagram doesn't support a share intent like Twitter; open the badge image so users can save/share on Instagram manually
+              if (igBtn) { igBtn.href = badgeUrl; igBtn.title = 'Open badge image'; }
               if (fbBtn) fbBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
               // copy handler
               if (copyBtn) copyBtn.onclick = async ()=>{ try { await navigator.clipboard.writeText(badgeUrl); copyBtn.textContent='Copied!'; setTimeout(()=>copyBtn.textContent='Copy Badge URL',1200); } catch(e){ alert('Copy failed; badge URL: '+badgeUrl); } };
