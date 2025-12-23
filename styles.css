@@ -37,7 +37,7 @@ body {
 .owl-image, .facts-image, .habitat-loss-image, .ways-to-help-image {
   width: 50%;
   max-width: 400px;
-  height:max-content;
+  height:auto;
   border-radius: 12px;
 }
 .about-text, .facts-text, .habitat-loss-text, .ways-to-help-text {
