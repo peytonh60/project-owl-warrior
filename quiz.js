@@ -56,7 +56,7 @@
           const copyBtn = document.getElementById('copy-badge-url');
           const igBtn = document.getElementById('share-instagram');
           const fbBtn = document.getElementById('share-facebook');
-          const badgeUrl = new URL('pow-logo1.gif', location.href).href;
+          const badgeUrl = 'https://peytonh60.github.io/project-owl-warrior/badge.gif';
           const pageUrl = location.href;
 
           if (total === quizData.length) {
