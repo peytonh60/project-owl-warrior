@@ -73,6 +73,14 @@ img { scroll-margin-top:72px; }
 .btn[download] { background:#f59e0b; }
 .congrats[hidden] { display:none; }
 
+/* Resource hub styles */
+.references { margin-top:40px; border-top:1px solid #eee; padding-top:24px; }
+.references h2 { margin:0px 100px -80px; justify-content: center;}
+.references ul { list-style:none; padding:8px 10px; margin:80px; }
+.references li { margin:12px 0; }
+.references a { display:block; padding:10px 12px; color:#012bff; text-decoration:underline; border-radius:20px; }
+
+/* Persistent controls */
 .persistent-controls { margin-top:12px; display:flex; justify-content:flex-end; }
 .persistent-controls #quiz-restart { background:#ef4444; color:#fff; border:0; padding:8px 10px; border-radius:6px; cursor:pointer; }
 .persistent-controls #quiz-restart:focus { outline:2px solid #fbcfe8; }

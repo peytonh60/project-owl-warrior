@@ -15,6 +15,8 @@
   const scoreEl = document.getElementById('quiz-score');
   const badgeEl = document.getElementById('quiz-badge');
   const restartBtn = document.getElementById('quiz-restart');
+  const congratsEl = document.getElementById('quiz-congrats');
+  const quizLogoEl = document.getElementById('quiz-logo');
   let current = 0;
   const selected = new Array(quizData.length).fill(null);
   const correct = new Array(quizData.length).fill(false);
@@ -50,7 +52,6 @@
   function updateResultsIfPerfect(){
     const total = correct.reduce((s,c)=> s + (c?1:0), 0);
     scoreEl.textContent = `You got ${total} out of ${quizData.length}.`;
-          const congratsEl = document.getElementById('quiz-congrats');
           const downloadBtn = document.getElementById('download-badge');
           const copyBtn = document.getElementById('copy-badge-url');
           const igBtn = document.getElementById('share-instagram');
@@ -65,6 +66,7 @@
             // show congrats panel
             if (congratsEl) {
               congratsEl.hidden = false;
+              quizLogoEl.classList.remove('hidden');
               // set download link
               if (downloadBtn) downloadBtn.href = badgeUrl;
               // set share links
@@ -121,14 +123,25 @@
   });
 
   restartBtn.addEventListener('click', ()=>{
-    for (let i=0;i<selected.length;i++) selected[i]=null;
-    for (let i=0;i<correct.length;i++) correct[i]=false;
-    questionEls.forEach(qEl => qEl.querySelectorAll('.options button').forEach(b => b.classList.remove('correct','incorrect')));
-    badgeEl.classList.remove('show');
-    scoreEl.textContent = '';
-    quizEl.classList.remove('completed');
-    current = 0; localStorage.removeItem(storageKey); save(); showQuestion(0);
-  });
+      for (let i = 0; i < selected.length; i++) selected[i] = null;
+      for (let i = 0; i < correct.length; i++) correct[i] = false;
+
+      questionEls.forEach(qEl =>
+        qEl.querySelectorAll('.options button')
+          .forEach(b => b.classList.remove('correct','incorrect'))
+      );
+
+      if (congratsEl) congratsEl.hidden = true;
+      badgeEl.classList.remove('show');
+      scoreEl.textContent = '';
+      quizEl.classList.remove('completed');
+      quizLogoEl.classList.add('hidden');
+
+      current = 0;
+      localStorage.removeItem(storageKey);
+      save();
+      showQuestion(0);
+});
 
   // Initialize
   load();
