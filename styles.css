@@ -17,6 +17,15 @@ header { position:fixed; top:0; left:0; right:0; height:70px; display:flex; alig
 .backdrop.show { opacity:1; pointer-events:auto; }
 
 /* Content */
+/* main */
+main { padding:80px 16px 24px; max-width:900px; margin:0 auto; }
+img { max-width:100%; display:block; margin:24px 0; }
+img { scroll-margin-top:72px; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
 
 .about, .facts, .habitat-loss, .ways-to-help {
   max-width: 700px;
