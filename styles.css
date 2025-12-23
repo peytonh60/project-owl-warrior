@@ -54,7 +54,7 @@ li {
 .question { display:none; }
 .question.active { display:block; }
 .options { list-style:none; padding:0; margin:12px 0; display:grid; gap:8px; }
-.options button { text-align:left; padding:10px 12px; border:1px solid #ddd; background:#fff; border-radius:6px; cursor:pointer; color:default; min-height: 44px;}
+.options button { text-align:left; padding:10px 12px; border:1px solid #ddd; background:#fff; border-radius:6px; cursor:pointer; min-height: 44px;}
 .options button.correct { background:#e6ffed; border-color:#34d399; }
 .options button.incorrect { background:#ffecec; border-color:#f87171; }
 .controls { display:flex; justify-content:space-between; gap:12px; margin-top:12px; align-items:center; }
@@ -63,6 +63,7 @@ li {
 .score { margin-top:12px; font-weight:600; }
 .nav-arrows { display:flex; gap:8px; min-height: 44px;}
 .hidden { display:none; }
+.options a { text-decoration:none; color:#111}
 
 /* When quiz is completed we remove the content from the flow so the congrats panel sits directly under the badge */
 .quiz.completed .content { display:none; }
