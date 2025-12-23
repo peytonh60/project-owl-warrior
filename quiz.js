@@ -2,9 +2,9 @@
 (function(){
   const storageKey = 'owlQuiz_v1';
   const quizData = [
-    { q: "Where do screech owls commonly live?", choices:["Deserts","Forests and woodlands","Open ocean","Rocky mountains"], answer:1 },
+    { q: "Where do screech owls nest?", choices:["Dreys; old squirrel nests","Cavities; old woodpecker nests","Platforms; stick nests in high canopy","Burrows; nests dug in the ground"], answer:1 },
     { q: "What do screech owls primarily eat?", choices:["Fish","Small mammals & insects","Berries","Seeds"], answer:1 },
-    { q: "When are screech owls mostly active?", choices:["Midday (12-3 PM)","Nighttime (12-2 AM)","Early morning (7-9 AM)","Early evening (6-7 PM)"], answer:1 },
+    { q: "What are color morphs?", choices:["Owls within one species can be different in color","Two different species under one name","Male and female are different colors","Owls change color with the seasons"], answer:0 },
     { q: "Which best describes how screech owls call?", choices:["A low coo","A high trill","A loud bark","A soft click"], answer:1 },
     { q: "How can you help owls?", choices:["Advocate for habitat protections","Protect habitat & provide nesting boxes","Plant native plants","Avoid using pesticides","All of the above"], answer:4 }
   ];

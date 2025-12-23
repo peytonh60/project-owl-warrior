@@ -17,11 +17,10 @@
       <button class="close-btn" id="closeBtn" aria-label="Close navigation">✕</button>
       <nav aria-label="Main navigation">
         <a href="#pow1">Home</a>
-        <a href="#pow2">Project</a>
-        <a href="#pow3">About</a>
-        <a href="#pow4">Facts</a>
-        <a href="#pow5">Habitat</a>
-        <a href="#pow6">Ways to Help</a>
+        <a href="about.html">About</a>
+        <a href="facts.html">Facts</a>
+        <a href="habitat-loss.html">Habitat</a>
+        <a href="ways-to-help.html">Ways to Help</a>
         <a href="#quiz-title">Quiz</a>
         <a href="#references">Resources</a>
       </nav>
@@ -32,27 +31,55 @@
     <main>
 
       <img id="pow1" src="svg/pow1.svg" alt="Home" />
+          <section class="about">
+      <h2>The Challenge</h2>
+      <p>
+        Screech owls are an important species in our environment and right now they need your help. 
+        With incoming housing developments, businesses, and industries, owls are losing their habitats. 
+        Read the page and take the quiz to complete the Owl Warrior Challenge.
+      </p>
+    </section>
+
         <img id="pow2" src="svg/pow2.svg" alt="Project Owl Warrior" />
-        <img id="pow3" src="svg/pow3.svg" alt="About Screech Owls" />
-        <img id="pow4" src="svg/pow4.svg" alt="Owl Facts" />
-        <img id="pow5" src="svg/pow5.svg" alt="Habitat Loss" />
-        <img id="pow6" src="svg/pow6.svg" alt="Ways to Help" />
+        <section class="facts">
+          <h2>About Screech Owls</h2>
+          <li> Screech owls are carnivores; their diet mostly consists of spiders, insects, frogs, small birds, lizards, and rodents.</li>
+          <li> The owls communicate through high trills that resemble a horse’s whinny.</li>
+          <li> Screeches are cavity nesters: they nest in the sides of tree trunks and sometimes take over old woodpecker nests</li>
+          <li> Screech owls prefer tree lines by fields, marshes, or creeks. Most avoid dense forests inhabited by larger nocturnal predators such as Barred or Great-Horned Owls</li>
+          <li> Eastern screech owls have two color morphs–red and grey–depending on the area they live in; sometimes there are different morphs in the same family.</li>
+        </section>
+        <section class="habitat-loss">
+          <h2>Habitat Loss</h2>
+          <li>Expanding towns and cities have led to a decrease in migratory bird habitats</li>
+          <li>Screech owls require trees and brush to hunt and hide from larger predators</li>
+          <li>A decrease in habitat directly contributes to a decrease in owls’ food supply</li>
+          <li>We need your help to combat habitat loss</li>
+        </section>
+        <section class="ways-to-help">
+          <h2>Ways to Help</h2>
+          <li>Advocate for <b>habitat protections</b> in your community</li>
+          <li>Protect existing habitat and <b>provide nesting boxes</b></li>
+          <li><b>Plant native plants</b> to support local ecosystems</li>
+          <li><b>Avoid using pesticides</b> that can harm owls and their prey</li>
+          <li>Help <b>clean up your community</b>; litter can disrupt owls and their ecosystems</li>
+        </section>
 
       <section class="quiz" id="quiz" aria-labelledby="quiz-title">
         <h2 id="quiz-title">Take the Challenge</h2>
 
         <div class="badge-top" id="quiz-logo" role="region" aria-hidden="polite" hidden>
-          <img src="pow-logo1.gif" alt="Owl Badge GIF" class="badge-top-img" />
+          <img src="badge.gif" alt="Owl Badge GIF" class="badge-top-img" />
         </div>
 
         <div class="content">
         <div class="question" data-index="0" id="q0">
-          <p class="prompt">1) Where do screech owls commonly live?</p>
+          <p class="prompt">1) Where do screech owls prefer to nest?</p>
           <ul class="options" role="list">
-            <li><button data-choice="0">A) Deserts</button></li>
-            <li><button data-choice="1">B) Forests and woodlands</button></li>
-            <li><button data-choice="2">C) Open ocean</button></li>
-            <li><button data-choice="3">D) Rocky mountains</button></li>
+            <li><button data-choice="0">A) Dreys; old squirrel nests</button></li>
+            <li><button data-choice="1">B) Cavities; old woodpecker nests</button></li>
+            <li><button data-choice="2">C) Platforms; stick nests in high canopy</button></li>
+            <li><button data-choice="3">D) Burrows; nests dug in the ground</button></li>
           </ul>
         </div>
 
@@ -67,12 +94,12 @@
         </div>
 
         <div class="question" data-index="2" id="q2">
-          <p class="prompt">3) When are screech owls mostly active?</p>
+          <p class="prompt">3) What are color morphs?</p>
           <ul class="options" role="list">
-            <li><button data-choice="0">A) Midday (12-3 PM)</button></li>
-            <li><button data-choice="1">B) Nighttime (12-2 AM)</button></li>
-            <li><button data-choice="2">C) Early morning (7-9 AM)</button></li>
-            <li><button data-choice="3">D) Early evening (6-7 PM)</button></li>
+            <li><button data-choice="0">A) Owls within one species can be different in color</button></li>
+            <li><button data-choice="1">B) Two different species under one name</button></li>
+            <li><button data-choice="2">C) Male and female are different colors</button></li>
+            <li><button data-choice="3">D) Owls change color with the seasons</button></li>
           </ul>
         </div>
 
