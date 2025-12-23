@@ -26,8 +26,21 @@ body {
   line-height: 1.6;
   font-size: 16px;
 }
-
-.about, .facts, .habitat-loss, .ways-to-help {
+.about {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+.owl-image {
+  width: 40%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+}
+.about-text, .facts, .habitat-loss, .ways-to-help {
   max-width: 700px;
   margin: auto;
   padding: 1rem;
