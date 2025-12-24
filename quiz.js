@@ -65,6 +65,7 @@
           if (total === quizData.length) {
             badgeEl.classList.add('show');
             quizEl.classList.add('completed');
+            badgeTop.hidden = false;
 
             // show congrats panel
             if (congratsEl) {
@@ -86,6 +87,7 @@
               try { quizEl.scrollIntoView({behavior:'smooth', block:'center'}); } catch(e){}
             }, 260);
           } else {
+            badgeTop.hidden = true;
             badgeEl.classList.remove('show');
             quizEl.classList.remove('completed');
             if (congratsEl) congratsEl.hidden = true;
@@ -125,6 +127,8 @@
   });
 
   restartBtn.addEventListener('click', ()=>{
+      quizEl.classList.remove('completed');
+      
       for (let i = 0; i < selected.length; i++) selected[i] = null;
       for (let i = 0; i < correct.length; i++) correct[i] = false;
 
@@ -137,7 +141,6 @@
       badgeEl.classList.remove('show');
       badgeTop.hidden = true;
       scoreEl.textContent = '';
-      quizEl.classList.remove('completed');
 
       current = 0;
       localStorage.removeItem(storageKey);
