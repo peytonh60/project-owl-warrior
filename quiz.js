@@ -59,9 +59,9 @@
           const copyBtn = document.getElementById('copy-badge-url');
           const igBtn = document.getElementById('share-instagram');
           const fbBtn = document.getElementById('share-facebook');
-          const badgeUrl = 'https://peytonh60.github.io/project-owl-warrior/badge.gif';
-          const igBadgeUrl = 'https://peytonh60.github.io/project-owl-warrior/ig.gif';
-          const fbBadgeUrl = 'https://peytonh60.github.io/project-owl-warrior/fb.gif';
+          const badgeUrl = 'https://peytonh60.github.io/project-owl-warrior/media/badge.gif';
+          const igBadgeUrl = 'https://peytonh60.github.io/project-owl-warrior/media/ig.gif';
+          const fbBadgeUrl = 'https://peytonh60.github.io/project-owl-warrior/media/fb.gif';
           const pageUrl = location.href;
 
           if (total === quizData.length) {
