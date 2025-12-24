@@ -154,8 +154,8 @@ li {
   .ways-to-help-image,
   iframe {
     width: 100%;
-    height: 60vh;
-    min-height: 400px;   /* safety floor */
+    height: 80vh;
+    min-height: 600px;   /* safety floor */
     border-radius: 12px;
   }
 }
@@ -163,8 +163,8 @@ li {
   iframe {
     min-height: 320px;
     width: 100%;
-    height: 60vh;
-    min-height: 400px;
+    height: 80vh;
+    min-height: 600px;
     border-radius: 12px;
   }
 }
