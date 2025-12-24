@@ -16,10 +16,13 @@
   const badgeEl = document.getElementById('quiz-badge');
   const restartBtn = document.getElementById('quiz-restart');
   const congratsEl = document.getElementById('quiz-congrats');
-  const quizLogoEl = document.getElementById('quiz-logo');
+  const badgeTop = document.getElementById('quiz-logo');
   let current = 0;
   const selected = new Array(quizData.length).fill(null);
   const correct = new Array(quizData.length).fill(false);
+
+  badgeTop.hidden = true;
+  badgeEl.classList.remove('show');
 
   function save() {
     try { localStorage.setItem(storageKey, JSON.stringify({ selected, current })); } catch(e) {}
@@ -66,7 +69,6 @@
             // show congrats panel
             if (congratsEl) {
               congratsEl.hidden = false;
-              quizLogoEl.classList.remove('hidden');
               // set download link
               if (downloadBtn) downloadBtn.href = badgeUrl;
               // set share links
@@ -133,9 +135,9 @@
 
       if (congratsEl) congratsEl.hidden = true;
       badgeEl.classList.remove('show');
+      badgeTop.hidden = true;
       scoreEl.textContent = '';
       quizEl.classList.remove('completed');
-      quizLogoEl.classList.add('hidden');
 
       current = 0;
       localStorage.removeItem(storageKey);
