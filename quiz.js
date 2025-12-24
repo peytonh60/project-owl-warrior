@@ -59,7 +59,8 @@
           const copyBtn = document.getElementById('copy-badge-url');
           const igBtn = document.getElementById('share-instagram');
           const fbBtn = document.getElementById('share-facebook');
-          const badgeUrl = 'https://peytonh60.github.io/project-owl-warrior/ig.gif';
+          const badgeUrl = 'https://peytonh60.github.io/project-owl-warrior/badge.gif';
+          const igBadgeUrl = 'https://peytonh60.github.io/project-owl-warrior/ig.gif';
           const fbBadgeUrl = 'https://peytonh60.github.io/project-owl-warrior/fb.gif';
           const pageUrl = location.href;
 
@@ -72,11 +73,11 @@
             if (congratsEl) {
               congratsEl.hidden = false;
               // set download link
-              if (downloadBtn) downloadBtn.href = badgeUrl;
+              if (downloadBtn) downloadBtn.href = igBadgeUrl;
               // set share links
               const text = `I scored 5/5 on the Owl Quiz! 🦉 Congratulations Owl Warrior!`;
               // Instagram doesn't support a share intent like Twitter; open the badge image so users can save/share on Instagram manually
-              if (igBtn) { igBtn.href = badgeUrl; igBtn.title = 'Open badge image'; }
+              if (igBtn) { igBtn.href = igBadgeUrl; igBtn.title = 'Open badge image'; }
               if (fbBtn) fbBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(fbBadgeUrl)}`;
               // copy handler
               if (copyBtn) copyBtn.onclick = async ()=>{ try { await navigator.clipboard.writeText(badgeUrl); copyBtn.textContent='Copied!'; setTimeout(()=>copyBtn.textContent='Copy Badge URL',1200); } catch(e){ alert('Copy failed; badge URL: '+badgeUrl); } };
