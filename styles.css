@@ -34,8 +34,8 @@ body {
   align-items: flex-start; /* key for equal height */
   gap: 2rem;
   max-width: 1000px;
-  margin: 1.5rem auto;
-  padding: 1rem 0;
+  margin: 1rem auto;
+  padding: 0;
 }
 .owl-image,
 .facts-image,
@@ -48,6 +48,9 @@ body {
 
 .section-title {
   scroll-margin-top: 80px;
+}
+section {
+  margin-block: 1rem;
 }
 .iframe-wrap {
   width: 100%;
@@ -92,7 +95,7 @@ ul {
 }
 
 /* Quiz styles */
-.quiz { margin-top:40px; border-top:1px solid #eee; padding-top:24px; }
+.quiz { margin-top:1.25rem; border-top:1px solid #eee; padding-top:1rem; }
 .quiz h2 { margin:0 0 12px; scroll-margin-top: 80px; }
 .question { display:none; }
 .question.active { display:block; }
@@ -139,7 +142,7 @@ ul {
   margin:0;
 }
 .congrats-actions { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:6px; }
-.btn { background:#2b6cb0; color:#fff; padding:0 12px; border-radius:6px; text-decoration:none; cursor:pointer; font-size:0.95rem; display:inline-flex; align-items:stretch;justify-content:center; min-width:160px; min-height:44px; }
+.btn { background:#2b6cb0; color:#fff; padding:0 12px; border-radius:6px; text-decoration:none; cursor:pointer; font-size:0.95rem; display:inline-flex; align-items:center;justify-content:center; min-width:160px; min-height:44px; }
 .btn:focus { outline:2px solid #cfe8ff; min-height: 44px; }
 .btn[download] { background:#f59e0b; min-height: 44px; }
 .congrats[hidden] { display:none; }
@@ -147,7 +150,8 @@ ul {
 .references {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1.25rem 1rem;
+  margin-top: 1.5rem;
 }
 .references h2 {
   margin-top: 0;
