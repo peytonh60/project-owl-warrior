@@ -54,7 +54,9 @@ body {
   height: 50vh;
   min-height: 320px;   /* safety floor */
 }
-
+.section-title {
+  scroll-margin-top: 80px;
+}
 .about-text,
 .facts-text,
 .habitat-loss-text,
@@ -85,7 +87,7 @@ ul {
 
 /* Quiz styles */
 .quiz { margin-top:40px; border-top:1px solid #eee; padding-top:24px; }
-.quiz h2 { margin:0 0 12px; }
+.quiz h2 { margin:0 0 12px; scroll-margin-top: 80px; }
 .question { display:none; }
 .question.active { display:block; }
 .options { list-style:none; padding:0; margin:12px 0; display:grid; gap:8px; }
