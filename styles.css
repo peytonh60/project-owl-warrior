@@ -39,42 +39,34 @@ body {
   padding: 1rem 0;
 }
 
-.owl-image,
-.facts-image,
-.habitat-loss-image,
-.ways-to-help-image,
-.about iframe,
-.facts iframe,
-.habitat-loss iframe,
-.ways-to-help iframe {
-  flex: 1;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 12px;  
-  min-height: 320px;   /* safety floor */
-}
 .section-title {
   scroll-margin-top: 80px;
 }
 .iframe-wrap {
-  flex: 1;
-  aspect-ratio: 16 / 9;
-  min-height: 260px;
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto;
+  min-height: 420px;
+  min-width: 0;
 }
-
 .iframe-wrap iframe {
+  display: block;
   width: 100%;
   height: 100%;
-  border: 0;
+  border: none;
+  min-height: inherit;
+  overflow:hidden;
 }
+
 
 .about-text,
 .facts-text,
 .habitat-loss-text,
 .ways-to-help-text {
-  flex: 1;
-  padding: 1rem;
+  align-self: flex-start;
+  min-width: 0;
 }
+
 
 h1, h2 {
   margin-top: 0;
@@ -83,7 +75,7 @@ h1, h2 {
 
 p {
   font-size: 1rem;
-  line-height: 2;
+  line-height: 1.6;
   margin-bottom: .5rem;
 }
 li {
@@ -211,29 +203,7 @@ ul {
     margin-bottom: 0.5rem;
     line-height: 1.6;
   }
-  iframe {
-    min-height: 320px;
-    width: 100%;
-    border-radius: 12px;
-    margin:0.5rem 0;
-  }
 
-  .owl-image,
-  .facts-image, 
-  .habitat-loss-image,
-  .ways-to-help-image,
-  iframe {
-    width: 100%;
-    min-height: 320px;   /* safety floor */
-    border-radius: 12px;
-  }
-}
-@media (min-width: 769px) {
-  iframe {
-    min-height: 320px;
-    width: 100%;
-    border-radius: 12px;
-  }
 }
 @media (max-width: 600px) {
   .references {
@@ -252,8 +222,11 @@ ul {
   .ways-to-help {
     flex-direction: column;
     align-items: stretch;
+    display: flex;
   }
-
+  .iframe-wrap {
+    min-height: 500px;
+  }
 }
 
 
