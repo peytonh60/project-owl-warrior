@@ -66,7 +66,6 @@ body {
 h1, h2 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  scroll-margin-top: 72px;
 }
 
 p {
@@ -139,7 +138,7 @@ ul {
 
 /* Resource hub styles */
 .references { margin-top:40px; border-top:1px solid #eee; padding-top:24px; }
-.references h2 { margin:0px 100px -80px; justify-content: center; scroll-margin-top: 72px; }
+.references h2 { margin:0px 100px -80px; justify-content: center;}
 .references ul { list-style:none; padding:8px 10px; margin:80px; }
 .references li { margin:12px 0; }
 .references a { display:block; padding:10px 12px; color:#012bff; text-decoration:underline; border-radius:20px; }
@@ -167,8 +166,7 @@ ul {
   }
   h2 {
     margin-top: 0rem;
-    margin-bottom: 0.5rem;
-    scroll-margin-top: 72px;
+    margin-bottom: 0.5rem
   }
   ul {
     padding-left:1.2 rem;
