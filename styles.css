@@ -1,4 +1,3 @@
-*{box-sizing: border-box;}
 /* styles.css — extracted from projectowlwarrior.html */
 :root { --sidebar-width: 260px; --bg: #7bc49d; --accent: #2b6cb0; }
 html { scroll-behavior: smooth; }
@@ -29,29 +28,22 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
   font-size: 16px;
-  margin: 0;
 }
-.about,
-.facts,
-.habitat-loss,
-.ways-to-help {
+.about, .facts, .habitat-loss, .ways-to-help {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start; /* key for equal height */
   gap: 2rem;
-  margin: 1rem 0;
+  max-width: 1000px;
+  margin: 1rem auto;
   padding: 0;
 }
-
 .owl-image,
 .facts-image,
 .habitat-loss-image,
 .ways-to-help-image {
-  max-width: 420px;
-  width: 100%;
-  height: auto;
+  width: 100%;   
   border-radius: 12px;
   object-fit: contain;
-  flex-shrink: 0;
 }
 
 .section-title {
@@ -60,9 +52,9 @@ body {
 
 .iframe-wrap {
   width: 100%;
-  aspect-ratio: 3 / 5;
+  aspect-ratio: 4 / 5;    /* taller = credits visible */
+  min-height: 520px;
 }
-
 
 .iframe-wrap iframe {
   width: 100%;
@@ -87,7 +79,7 @@ h1, h2 {
 
 p {
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 2;
   margin-bottom: .5rem;
 }
 li {
@@ -239,7 +231,7 @@ ul {
   }
   .iframe-wrap {
     aspect-ratio: 3 / 5;
-    width: 100%;
+    min-height: 600px;
   }
 }
 @media (min-width: 1024px) {
