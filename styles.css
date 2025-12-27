@@ -2,7 +2,7 @@
 :root { --sidebar-width: 260px; --bg: #7bc49d; --accent: #2b6cb0; }
 html { scroll-behavior: smooth; }
 body { font-family: system-ui, -apple-system, sans-serif; margin:0; }
-header { position:fixed; top:0; left:0; right:0; height:70px; display:flex; align-items:center; gap:12px; padding:0 12px; background:#6fc1b8; border-bottom:1px solid #eee; z-index:30; }
+header { position:fixed; top:0; left:0; right:0; height:70px; display:flex; align-items:stretch; gap:12px; padding:0 12px; background:#6fc1b8; border-bottom:1px solid #eee; z-index:30; }
 .brand { font-weight:600; }
 .menu-btn { background:none; border:0; font-size:20px; padding:8px; cursor:pointer; }
 /* Sidebar */
@@ -94,7 +94,7 @@ ul {
 .options button { text-align:left; padding:10px 12px; border:1px solid #ddd; background:#fff; border-radius:6px; cursor:pointer; min-height: 44px;}
 .options button.correct { background:#e6ffed; border-color:#34d399; }
 .options button.incorrect { background:#ffecec; border-color:#f87171; }
-.controls { display:flex; justify-content:space-between; gap:12px; margin-top:12px; align-items:center; }
+.controls { display:flex; justify-content:space-between; gap:12px; margin-top:12px; align-items:stretch; }
 .badge { display:none; margin-top:12px; font-size:16px; padding:8px 12px; background:#fff7ed; border:1px solid #ffd580; border-radius:6px; }
 .badge.show { display:inline-block; }
 .score { margin-top:12px; font-weight:600; }
@@ -112,12 +112,12 @@ ul {
 .badge.show { display:block; animation: pop .45s cubic-bezier(.2,.9,.3,1) both; }
 
 /* Congrats panel */
-.congrats { display:flex; align-items:center; gap:12px; padding:12px; border-radius:8px; background:linear-gradient(180deg,#fff 0%, #f9fafb 100%); border:1px solid #eee; box-shadow: 0 6px 18px rgba(0,0,0,.06); margin-top:4px; justify-content:center; }
+.congrats { display:flex; align-items:stretch; gap:12px; padding:12px; border-radius:8px; background:linear-gradient(180deg,#fff 0%, #f9fafb 100%); border:1px solid #eee; box-shadow: 0 6px 18px rgba(0,0,0,.06); margin-top:4px; justify-content:center; }
 .congrats-img { width:220px; height:auto; border-radius:6px; box-shadow: 0 6px 20px rgba(0,0,0,.1); }
 .congrats-text { font-size:1.2rem; text-align:center; }
 .badge-top {
   display:flex;
-  align-items:center;
+  align-items:stretch;
   justify-content:center;
   margin:8px 0 4px;
   padding:10px 0 6px;
@@ -133,7 +133,7 @@ ul {
   margin:0;
 }
 .congrats-actions { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:6px; }
-.btn { background:#2b6cb0; color:#fff; padding:0 12px; border-radius:6px; text-decoration:none; cursor:pointer; font-size:0.95rem; display:inline-flex; align-items:center; justify-content:center; min-width:160px; min-height:44px; }
+.btn { background:#2b6cb0; color:#fff; padding:0 12px; border-radius:6px; text-decoration:none; cursor:pointer; font-size:0.95rem; display:inline-flex; align-items:stretch;justify-content:center; min-width:160px; min-height:44px; }
 .btn:focus { outline:2px solid #cfe8ff; min-height: 44px; }
 .btn[download] { background:#f59e0b; min-height: 44px; }
 .congrats[hidden] { display:none; }
