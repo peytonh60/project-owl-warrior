@@ -56,7 +56,7 @@
     const total = correct.reduce((s,c)=> s + (c?1:0), 0);
     scoreEl.textContent = `You got ${total} out of ${quizData.length}.`;
           const downloadBtn = document.getElementById('download-badge');
-          const copyBtn = document.getElementById('copy-badge-url');
+          const shareBtn = document.getElementById('share-site-url');
           const igBtn = document.getElementById('share-instagram');
           const fbBtn = document.getElementById('share-facebook');
           const badgeUrl = 'https://peytonh60.github.io/project-owl-warrior/media/badge.gif';
@@ -80,7 +80,7 @@
               if (igBtn) { igBtn.href = igBadgeUrl; igBtn.title = 'Open badge image'; }
               if (fbBtn) fbBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(fbBadgeUrl)}`;
               // copy handler
-              if (copyBtn) copyBtn.onclick = async ()=>{ try { await navigator.clipboard.writeText(badgeUrl); copyBtn.textContent='Copied!'; setTimeout(()=>copyBtn.textContent='Copy Badge URL',1200); } catch(e){ alert('Copy failed; badge URL: '+badgeUrl); } };
+              if (shareBtn) shareBtn.onclick = async ()=>{ try { await navigator.clipboard.writeText(pageUrl); shareBtn.textContent='Copied!'; setTimeout(()=>shareBtn.textContent='Copy Site URL',1200); } catch(e){ alert('Copy failed; site URL: '+siteUrl); } };
             }
 
             // Let the pop animation run then focus and bring the quiz into view
