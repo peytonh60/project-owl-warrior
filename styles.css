@@ -1,7 +1,6 @@
 /* styles.css — extracted from projectowlwarrior.html */
 :root { --sidebar-width: 260px; --bg: #7bc49d; --accent: #2b6cb0; }
 html { scroll-behavior: smooth; }
-body { font-family: system-ui, -apple-system, sans-serif; margin:0; }
 header { position:fixed; top:0; left:0; right:0; height:70px; display:flex; align-items:center; gap:12px; padding:0 12px; background:#6fc1b8; border-bottom:1px solid #eee; z-index:30; }
 .brand { font-weight:600; }
 .menu-btn { background:none; border:0; font-size:20px; padding:8px; cursor:pointer; }
@@ -32,7 +31,7 @@ body {
 }
 .about, .facts, .habitat-loss, .ways-to-help {
   display: flex;
-  align-items: stretch; /* key for equal height */
+  align-items: flex-start; /* key for equal height */
   gap: 2rem;
   max-width: 1000px;
   margin: 1.5rem auto;
@@ -42,8 +41,7 @@ body {
 .facts-image,
 .habitat-loss-image,
 .ways-to-help-image {
-  width: 100%;
-  height: auto;              /* 🔑 allow natural height */    
+  width: 100%;   
   border-radius: 12px;
   object-fit: contain;
 }
@@ -52,18 +50,15 @@ body {
   scroll-margin-top: 80px;
 }
 .iframe-wrap {
-  flex: 1 1 auto;
   width: 100%;
-  height: auto;
-  min-height: 420px;
-  min-width: 0;
+  aspect-ratio: 4 / 5;    /* taller = credits visible */
+  min-height: 520px;
 }
+
 .iframe-wrap iframe {
-  display: block;
   width: 100%;
+  height: 100%;
   border: none;
-  min-height: inherit;
-  overflow:hidden;
 }
 
 
@@ -229,11 +224,12 @@ ul {
   .habitat-loss,
   .ways-to-help {
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
     display: flex;
   }
   .iframe-wrap {
-    min-height: 500px;
+    aspect-ratio: 3 / 5;
+    min-height: 600px;
   }
 }
 
