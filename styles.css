@@ -237,5 +237,20 @@ ul {
     font-size: 0.9rem;
   }
 }
+@media (max-width: 900px) {
+  .about,
+  .facts,
+  .habitat-loss,
+  .ways-to-help {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .iframe-wrap {
+    width: 100%;
+    min-height: 320px;
+  }
+}
+
 
 
