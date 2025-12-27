@@ -138,13 +138,35 @@ ul {
 .btn[download] { background:#f59e0b; min-height: 44px; }
 .congrats[hidden] { display:none; }
 
-/* Resource hub styles */
-.references { margin-top:40px; border-top:1px solid #eee; padding-top:24px; }
-.references h2 { margin:0px 100px -80px; justify-content: center;}
-.references ul { list-style:none; padding:8px 10px; margin:80px; }
-.references li { margin:12px 0; }
-.references a { display:block; padding:10px 12px; color:#012bff; text-decoration:underline; border-radius:20px; }
+.references {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.references h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.ref-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
+.ref-list li {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+.ref-list li a {
+  word-break: break-word;
+  color: #2b6cb0;
+  text-decoration: none;
+}
+.ref-list li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.75rem;
+}
 /* Persistent controls */
 .persistent-controls { margin-top:12px; display:flex; justify-content:flex-end; }
 .persistent-controls #quiz-restart { background:#ef4444; color:#fff; border:0; padding:8px 10px; border-radius:6px; cursor:pointer; }
@@ -205,4 +227,15 @@ ul {
     border-radius: 12px;
   }
 }
+@media (max-width: 600px) {
+  .references {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .ref-list li {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
 
