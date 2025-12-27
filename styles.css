@@ -38,6 +38,15 @@ body {
   margin: 1.5rem auto;
   padding: 1rem 0;
 }
+.owl-image,
+.facts-image,
+.habitat-loss-image,
+.ways-to-help-image {
+  width: 100%;
+  height: auto;              /* 🔑 allow natural height */    
+  border-radius: 12px;
+  object-fit: contain;
+}
 
 .section-title {
   scroll-margin-top: 80px;
@@ -52,7 +61,6 @@ body {
 .iframe-wrap iframe {
   display: block;
   width: 100%;
-  height: 100%;
   border: none;
   min-height: inherit;
   overflow:hidden;
