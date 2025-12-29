@@ -38,15 +38,21 @@
         <div class="about-text"><h2 id="about-title" class="section-title">The Challenge</h2>
           <p>Screech owls are an important species in our environment and right now they need your help. With incoming housing developments, businesses, and industries, owls are losing their habitats. <b>Read the page and take the quiz to complete the Owl Warrior Challenge.</b></p>
         </div>
-        <div class="iframe-wrap">
-          <iframe src="https://macaulaylibrary.org/asset/425510611/embed" class="owl-image" loading="lazy" scrolling="no"></iframe>
+          <div id="image-container">
+              <img src="media/about.png" alt="owl in tree" class="section-image" id="fullscreen-image">
+              <button class="fullscreen-button" onclick="toggleFullscreen()">View Fullscreen</button>
           </div>
+
+
         </section>
 
     <section id="facts" class="facts">
-      <div class="iframe-wrap">
-        <iframe src="https://macaulaylibrary.org/asset/524659071/embed" class="facts-image" loading="lazy" scrolling="no"></iframe>
+
+        <div id="image-container">
+              <img src="media/facts.png" alt="owl in tree" class="section-image" id="fullscreen-image">
+              <button class="fullscreen-button" onclick="toggleFullscreen()">View Fullscreen</button>
         </div>
+
         <div class="facts-text">
         <h2 id="facts-title" class="section-title">About Screech Owls</h2>
         <ul>
@@ -69,15 +75,18 @@
             <li>We need your help to combat habitat loss.</li>
         </ul>
         </div>
-        <div class="iframe-wrap">
-        <iframe src="https://macaulaylibrary.org/asset/626069066/embed" class="habitat-loss-image" loading="lazy" scrolling="no"></iframe>
+        <div id="image-container">
+              <img src="media/habitat.png" alt="owl in tree" class="section-image" id="fullscreen-image">
+              <button class="fullscreen-button" onclick="toggleFullscreen()">View Fullscreen</button>
           </div>
+
       </section>
 
     <section id="ways-to-help" class="ways-to-help">
-      <div class="iframe-wrap">
-      <iframe src="https://macaulaylibrary.org/asset/633530991/embed" class="ways-to-help-image" loading="lazy" scrolling="no"></iframe>
-       </div>
+          <div id="image-container">
+                  <img src="media/ways-to-help.png" alt="owl in tree" class="section-image" id="fullscreen-image">
+                  <button class="fullscreen-button" onclick="toggleFullscreen()">View Fullscreen</button>
+          </div>
       <div class="ways-to-help-text">
           <h2 id="ways-to-help-title" class="section-title">Ways to Help</h2>
           <ul>
@@ -175,6 +184,7 @@
     </main>
     <script src="sidebar.js" defer></script>
     <script src="quiz.js" defer></script>
+    <script src="image.js" defer></script>
 
 <section id="references" class="references">
   <h2 id="references-title" class="section-title">Resources</h2>
