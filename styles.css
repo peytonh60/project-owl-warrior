@@ -1,25 +1,4 @@
-/* Optional CSS to style the container when it is in fullscreen mode */
-#image-container:-webkit-full-screen {
-  width: 100%;
-  display: flex;
-  justify-content: stretch;
-  align-items: center;
-  background-color: black;
-}
-#image-container:-moz-full-screen {
-  width: 100%;
-  display: flex;
-  justify-content: stretch;
-  align-items: center;
-  background-color: black;
-}
-#image-container:fullscreen {
-  width: 100%;
-  display: flex;
-  justify-content: stretch;
-  align-items: center;
-  background-color: black;
-}
+
 .fullscreen-button {
   position:relative;
   justify-content: stretch;
