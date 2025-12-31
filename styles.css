@@ -4,7 +4,7 @@
 html { scroll-behavior: smooth; }
 header { position:fixed; top:0; left:0; right:0; height:70px; display:flex; align-items:center; gap:12px; padding:0 12px; background:#6fc1b8; border-bottom:1px solid #eee; z-index:30; }
 .brand { font-weight:600; }
-.menu-btn { background:none; border:0; font-size:50px; padding:8px; cursor:pointer; }
+.menu-btn { background:none; border:0; font-size:40px; padding:8px; cursor:pointer; color:#111}
 /* Sidebar */
 .sidebar { position:fixed; top:0; left:0; height:100%; width:var(--sidebar-width); background:var(--bg); box-shadow: 2px 0 8px rgba(0,0,0,.12); transform:translateX(-110%); transition: transform .25s ease; z-index:40; padding:72px 16px 16px; }
 .sidebar.open { transform:translateX(0); }
@@ -205,6 +205,12 @@ ul {
 .ref-list li:not(:last-child) {
   border-bottom: 1px solid #eee;
   padding-bottom: 0.75rem;
+}
+.acknowledgements-text {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+  margin-top: 1.5rem;
 }
 .footer {
   text-align: center;
