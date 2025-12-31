@@ -94,7 +94,7 @@ ul {
 }
 
 /* Quiz styles */
-.quiz { margin-top:1.25rem; border-top:1px solid #eee; padding-top:1rem; }
+.quiz { margin:1.25rem 1.25rem; border-top:1px solid #eee; padding-top:1rem; }
 .quiz h2 { margin:0 0 12px; scroll-margin-top: 80px; }
 .question { display:none; }
 .question.active { display:block; }
@@ -189,9 +189,6 @@ ul {
   .section {
     align-items: stretch;
     flex-direction: column;
-  }
-  .figure {
-    width: 100%;
   }
 }
 @media (max-width: 600px) {
