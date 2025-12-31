@@ -41,6 +41,7 @@ body {
 .section-image{
   width: 100%;
   max-width: none;
+  min-width: 60dvh;
   height: auto;
   object-fit: cover;
 }
@@ -48,25 +49,25 @@ body {
 .section-title {
   scroll-margin-top: 80px;
 }
+.section-text {
+  padding: 0 1rem;
+}
 figure {
-  /* Optional: Add a border and margin to the figure element */
   border: 1px solid #ccc;
   margin: 10px;
   padding: 4px;
-  text-align: center; /* Center the image and text */
+  text-align: center; 
   flex:1;
 }
 
 figcaption {
-  /* Style the main caption area */
   font-size: 0.8em;
   color: #555;
   margin-top: 6px;
 }
 
 .credit {
-  /* Style the credit line specifically */
-  display: block; /* Puts the credit on a new line if desired */
+  display: block; 
   font-size: 1em;
   font-style: italic;
   color: #666;
@@ -214,7 +215,7 @@ ul {
 @media (min-width: 1024px) {
   main {
     max-width: 1100px;   /* wider content area */
-    padding-left: 8px;   /* tighter side padding */
-    padding-right: 8px;
+    padding-left: 4px;   /* tighter side padding */
+    padding-right: 4px;
   }
 }
