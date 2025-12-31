@@ -18,7 +18,7 @@ header { position:fixed; top:0; left:0; right:0; height:70px; display:flex; alig
 
 /* Content */
 /* main */
-main { padding:80px 16px 24px; max-width:900px; margin:0; }
+main { padding:80px 16px 24px; max-width:900px; margin:0 auto; max-width: 1100px; }
 img { 
   max-width:100%; 
   display:block; 
@@ -35,13 +35,22 @@ body {
   align-items: center;
   gap: 2rem;
   max-width: 1000px;
-  margin: .1rem .25rem;
-  padding: 0;
+  margin: 0;
+  padding: .5rem;
 }
+.section > * {
+  min-width: 0;
+}
+.section > figure {
+  flex: 1 1 50%;
+}
+
+.section > div {
+  flex: 1 1 50%;
+}
+
 .section-image{
   width: 100%;
-  max-width: none;
-  min-width: 60vh;
   height: auto;
   object-fit: cover;
 }
@@ -54,8 +63,6 @@ body {
 }
 figure {
   border: 1px solid #ccc;
-  margin: 5px;
-  padding: 4px;
   text-align: center; 
   flex:1;
 }
@@ -188,6 +195,11 @@ ul {
   .section {
     align-items: stretch;
     flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+  figure {
+    width: 100%;
   }
 }
 @media (max-width: 600px) {
