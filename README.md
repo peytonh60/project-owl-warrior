@@ -2,7 +2,7 @@
 
 Hello, I constructed this site as part of my Girl Scout Gold Award Project to protect Eastern Screech Owls. 
 
-All images and GIFs were created on CANVA and exported here. The website consists of an article about Eastern Screech Owls and a 5-question quiz you can take to become an "Owl Warrior."
+The website consists of an article about Eastern Screech Owls and a 5-question quiz you can take to become an "Owl Warrior."
 
 The goal of this site is to educate users of all ages on how to help owls in their community. I designed this site to be shared. 
 

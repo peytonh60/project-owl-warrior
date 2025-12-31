@@ -4,7 +4,7 @@
 html { scroll-behavior: smooth; }
 header { position:fixed; top:0; left:0; right:0; height:70px; display:flex; align-items:center; gap:12px; padding:0 12px; background:#6fc1b8; border-bottom:1px solid #eee; z-index:30; }
 .brand { font-weight:600; }
-.menu-btn { background:none; border:0; font-size:20px; padding:8px; cursor:pointer; }
+.menu-btn { background:none; border:0; font-size:50px; padding:8px; cursor:pointer; }
 /* Sidebar */
 .sidebar { position:fixed; top:0; left:0; height:100%; width:var(--sidebar-width); background:var(--bg); box-shadow: 2px 0 8px rgba(0,0,0,.12); transform:translateX(-110%); transition: transform .25s ease; z-index:40; padding:72px 16px 16px; }
 .sidebar.open { transform:translateX(0); }
@@ -111,16 +111,16 @@ ul {
 .question { display:none; }
 .question.active { display:block; }
 .options { list-style:none; padding:0; margin:12px 0; display:grid; gap:8px; }
-.options button { text-align:left; padding:10px 12px; border:1px solid #ddd; background:#fff; border-radius:6px; cursor:pointer; min-height: 44px;}
+.options button { text-align:left; padding:10px 12px; border:1px solid #ddd; background:#fff; border-radius:6px; cursor:pointer; min-height: 44px; font-size: 1rem;}
 .options button.correct { background:#e6ffed; border-color:#34d399; }
 .options button.incorrect { background:#ffecec; border-color:#f87171; }
 .controls { display:flex; justify-content:space-between; gap:12px; margin-top:12px; align-items:stretch; }
-.badge { display:none; margin-top:12px; font-size:16px; padding:8px 12px; background:#fff7ed; border:1px solid #ffd580; border-radius:6px; }
+.badge { display:none; margin-top:12px; font-size:1rem; padding:8px 12px; background:#fff7ed; border:1px solid #ffd580; border-radius:6px; }
 .badge.show { display:inline-block; }
 .score { margin-top:12px; font-weight:600; }
-.nav-arrows { display:flex; gap:8px; min-height: 44px;}
+.nav-arrows { display:flex; gap:8px; min-height: 44px; font-size: 1rem;}
 .hidden { display:none; }
-.options a { text-decoration:none; color:#111}
+.options a { text-decoration:none; color:#111; font-size: 1rem;}
 
 /* When quiz is completed we remove the content from the flow so the congrats panel sits directly under the badge */
 .quiz.completed .content { display:none; }
@@ -189,6 +189,19 @@ ul {
   border-bottom: 1px solid #eee;
   padding-bottom: 0.75rem;
 }
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f9fafb;
+  border-top: 1px solid #eee;
+  margin-top: 2rem;
+  color: #555;
+}
+.footer p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
 /* Persistent controls */
 .persistent-controls { margin-top:12px; display:flex; justify-content:flex-end; }
 .persistent-controls #quiz-restart { background:#ef4444; color:#fff; border:0; padding:8px 10px; border-radius:6px; cursor:pointer; min-height: 44px; margin-right: 10rem;}
