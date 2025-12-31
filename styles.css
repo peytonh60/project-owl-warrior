@@ -18,7 +18,7 @@ header { position:fixed; top:0; left:0; right:0; height:70px; display:flex; alig
 
 /* Content */
 /* main */
-main { padding:80px 16px 24px; max-width:900px; margin:0 auto; }
+main { padding:80px 16px 24px; max-width:900px; margin:0; }
 img { 
   max-width:100%; 
   display:block; 
@@ -35,7 +35,7 @@ body {
   align-items: center;
   gap: 2rem;
   max-width: 1000px;
-  margin: .25rem 1rem;
+  margin: .1rem .25rem;
   padding: 0;
 }
 .section-image{
@@ -54,7 +54,7 @@ body {
 }
 figure {
   border: 1px solid #ccc;
-  margin: 10px;
+  margin: 5px;
   padding: 4px;
   text-align: center; 
   flex:1;
@@ -63,7 +63,7 @@ figure {
 figcaption {
   font-size: 0.8em;
   color: #555;
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .credit {
@@ -90,11 +90,10 @@ li {
 }
 ul {
   margin: .5rem 0;
-  padding: 0 0.25rem;
 }
 
 /* Quiz styles */
-.quiz { margin:1.25rem 1.25rem; border-top:1px solid #eee; padding-top:1rem; }
+.quiz { margin:1.25rem 1.25rem; border-top:1px solid #eee; padding-top:1rem; align-content: stretch; }
 .quiz h2 { margin:0 0 12px; scroll-margin-top: 80px; }
 .question { display:none; }
 .question.active { display:block; }
@@ -179,7 +178,7 @@ ul {
 }
 /* Persistent controls */
 .persistent-controls { margin-top:12px; display:flex; justify-content:flex-end; }
-.persistent-controls #quiz-restart { background:#ef4444; color:#fff; border:0; padding:8px 10px; border-radius:6px; cursor:pointer; }
+.persistent-controls #quiz-restart { background:#ef4444; color:#fff; border:0; padding:8px 10px; border-radius:6px; cursor:pointer; min-height: 44px; margin-right: 10rem;}
 .persistent-controls #quiz-restart:focus { outline:2px solid #fbcfe8; }
 @keyframes pop { 0% { transform: scale(.6); opacity:0 } 60% { transform: scale(1.08); opacity:1 } 100% { transform: scale(1); opacity:1 } }
 @keyframes completedGlow { from { box-shadow: 0 0 0 rgba(59,130,246,0); } to { box-shadow: 0 14px 40px rgba(59,130,246,.12); } }
