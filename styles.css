@@ -60,6 +60,23 @@ body {
   height: auto;
   object-fit: cover;
 }
+.about-project-text {
+  font-size: .95rem;
+  padding: 0;
+}
+.section-double-image {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  height: auto;
+  max-width: 100%;
+  padding:0;
+}
+.divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 3rem 0;
+}
 
 .section-title {
   scroll-margin-top: 80px;
@@ -178,7 +195,7 @@ ul {
 .ref-list li {
   margin-bottom: 1rem;
   line-height: 1.5;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 .ref-list li a {
   word-break: break-word;
