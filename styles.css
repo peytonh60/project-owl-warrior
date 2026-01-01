@@ -128,14 +128,14 @@ ul {
 .question { display:none; }
 .question.active { display:block; }
 .options { list-style:none; padding:0; margin:12px 0; display:grid; gap:8px; }
-.options button { text-align:left; padding:10px 12px; border:1px solid #ddd; background:#fff; border-radius:6px; cursor:pointer; min-height: 44px; font-size: 1rem;}
+.options button { text-align:left; padding:10px 12px; border:1px solid #ddd; background:#fff; border-radius:6px; cursor:pointer; min-height: 44px; font-size: 1rem; color:#111}
 .options button.correct { background:#e6ffed; border-color:#34d399; }
 .options button.incorrect { background:#ffecec; border-color:#f87171; }
 .controls { display:flex; justify-content:space-between; gap:12px; margin-top:12px; align-items:stretch; }
 .badge { display:none; margin-top:12px; font-size:1rem; padding:8px 12px; background:#fff7ed; border:1px solid #ffd580; border-radius:6px; }
 .badge.show { display:inline-block; }
 .score { margin-top:12px; font-weight:600; }
-.nav-arrows { display:flex; gap:8px; min-height: 44px; font-size: 1rem;}
+.nav-arrows { display:flex; gap:8px; min-height: 44px; font-size: 1rem; color: #111;}
 .hidden { display:none; }
 .options a { text-decoration:none; color:#111; font-size: 1rem;}
 
