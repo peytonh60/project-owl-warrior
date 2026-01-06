@@ -60,8 +60,8 @@
           const igBtn = document.getElementById('share-instagram');
           const fbBtn = document.getElementById('share-facebook');
           const badgeUrl = 'https://peytonh60.github.io/project-owl-warrior/media/badge.gif';
-          const igBadgeUrl = 'https://peytonh60.github.io/project-owl-warrior/media/ig.gif';
-          const fbBadgeUrl = 'https://peytonh60.github.io/project-owl-warrior/media/fb.gif';
+          const igBadgeUrl = 'https://peytonh60.github.io/project-owl-warrior/media/ig.jpg';
+          const fbBadgeUrl = 'https://peytonh60.github.io/project-owl-warrior/media/fb.jpg';
           const pageUrl = location.href;
 
           if (total === quizData.length) {
